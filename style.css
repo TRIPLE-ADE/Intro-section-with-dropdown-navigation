@@ -212,6 +212,8 @@ nav{
 
 .subnav{
     position:relative;
+    box-shadow: none;
+    background-color: transparent;
 }
 .navbar{
     align-items: flex-start;
