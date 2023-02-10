@@ -1,0 +1,272 @@
+/*
+=============================================
+Global Styles
+=============================================
+*/
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+}
+body{
+    background-color: var(--Almost-White);
+    width: 95%;
+    margin: auto;
+    font-family: 'Epilogue', sans-serif;
+}
+a, subnav p{
+    text-decoration: none;
+    color: var(--Medium-Gray);
+}
+button{
+    border-radius: 15px;
+    border: 1px solid var(--Almost-Black);
+    padding: 10px 20px;
+}
+
+/*
+=============================================
+Header container Styles
+=============================================
+*/
+header{
+    padding: 30px 0;
+}
+.flex{
+    display: flex;
+    gap: 20px;
+}
+nav .flex, .register, .navbar{
+    align-items: center;}
+nav{
+    justify-content: space-between;
+    width: 100%;
+}
+nav > ul > li{
+    list-style: none;
+}
+
+/* nav dropdown style start */
+
+.hide, .cancel{
+    display: none ;
+}
+.show-subnav:hover  .hide{
+    display: block;
+}
+.register .show-subnav > a {
+    color: var(--Medium-Gray);
+}
+.show-subnav > a{
+    display: flex;
+}
+.show-subnav > a::after{
+    content: url("./images/icon-arrow-down.svg");
+    padding-left: 10px;
+}
+.show-subnav:hover > a::after{
+    content: url("./images/icon-arrow-up.svg");
+}
+.subnav{
+    background-color: var(--Almost-White);
+    position: absolute;
+    padding-top: 10px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 140px 0px rgba(0,0,0,0.2);
+    padding: 10px;
+}
+.subnav li{
+    list-style: none;
+    padding: 5px;
+    font-size: 0.8rem;
+    color: var(--Medium-Gray);
+}
+.subnav li a{
+    display: flex;
+}
+nav ul li:first-child ul li a{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+   
+}
+button, a{
+    font-size: 0.9rem;
+}
+.register button{
+    color: var(--Medium-Gray);
+    background-color: transparent;
+    cursor: pointer;
+}
+.register button:hover, a:hover{
+    color: var(--Almost-Black);
+}
+/* .hamburger{
+    display: none;
+} */
+/* nav dropdown style end */
+
+/*
+=============================================
+main container Styles
+=============================================
+*/
+main{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 100px;
+    min-height: 100vh;
+    width: 85%;
+    margin: auto;
+}
+.container{
+    padding-top: 100px;
+}
+.container > div{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 100px;
+}
+.container h1{
+    font-size: 4rem;
+}
+.container > *{
+    padding: 20px 0;
+}
+.container >p{
+    color: var(--Medium-Gray);
+    line-height: 1.5;
+    width: 90%;
+}
+.container .button{
+    margin-top: 20px;
+    background-color: var(--Almost-Black);
+    color: var(--Almost-White);
+}
+.container .button:hover{
+    background-color: transparent;
+    color: var(--Almost-Black);
+}
+.image-container img{
+    width: 100%;
+    max-width: 500px;
+}
+.desktop-img{
+    display: block;
+}
+
+
+/*
+=============================================
+media query for 400px container Styles
+=============================================
+*/
+
+
+
+@media (max-width:650px) {
+
+html{
+    font-size: 16px;
+}
+
+/*
+=============================================
+header container Styles
+=============================================
+*/
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.hamburger{
+    display: block;
+}
+.close{
+    position: fixed;
+    right: 0;
+    padding-right: 20px;
+}
+.hide-nav{
+    display: none;
+}
+.flex{
+    flex-direction: column;
+}
+nav{
+    padding: 100px;
+    position: fixed;
+    right: 0;
+    width:60%;
+    height: 100%;
+    margin-top: -30px;
+    justify-content: flex-start;
+    background-color: var(--Almost-White);
+}
+
+.subnav{
+    position:relative;
+}
+.navbar{
+    align-items: flex-start;
+}
+/*
+=============================================
+main container Styles
+=============================================
+*/
+.container {
+    text-align: center;
+}
+
+.container > div{
+    margin-top: 20px;
+}
+.container h1{
+    font-size: 2.2rem;
+}
+.container > *{
+    padding: 10px 0;
+}
+.container >p{
+    width: 100%;
+}
+}
+
+@media (max-width:400px) {
+
+
+
+/*
+=============================================
+main container Styles
+=============================================
+*/
+main{
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    width: 99%;
+    gap:0;
+}
+.container{
+    padding: 0;
+}
+main > .image-container{
+    grid-row: 1/1;
+}
+
+   .desktop-img {
+        display: none;
+   } 
+   .mobile-img {
+        display: block;
+        width: 100%;
+   }
+}
