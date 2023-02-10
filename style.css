@@ -136,6 +136,9 @@ main{
 .container h1{
     font-size: 4rem;
 }
+.container h1 span{
+    display: block;
+}
 .container > *{
     padding: 20px 0;
 }
@@ -238,6 +241,9 @@ main container Styles
 }
 .container >p{
     width: 100%;
+}
+.container h1 span{
+    display: inline-block;
 }
 }
 
